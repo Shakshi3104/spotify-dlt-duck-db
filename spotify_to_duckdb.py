@@ -50,7 +50,10 @@ if __name__ == "__main__":
             {
                 "name": "top-tracks",
                 "endpoint": {
-                    "path": "top-tracks"
+                    "path": "top-tracks",
+                    "params": {
+                        "market": "JP"
+                    }
                 }
             }
         ],
