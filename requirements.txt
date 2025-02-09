@@ -1,0 +1,17 @@
+# Spotify
+spotipy
+
+# dlt
+dlt
+
+duckdb
+dlt[duckdb]>=1.6.1
+pandas
+streamlit
+
+# Utility
+pyyaml>=6.0
+typing_extensions
+loguru>=0.7.0
+tqdm
+python-dotenv
