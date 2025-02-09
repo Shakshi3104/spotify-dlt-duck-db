@@ -13,6 +13,7 @@ from dlt.sources.rest_api import (
 )
 from dlt.sources.helpers import requests
 
+
 if __name__ == "__main__":
     load_dotenv()
 
@@ -50,13 +51,6 @@ if __name__ == "__main__":
                 "name": "top-tracks",
                 "endpoint": {
                     "path": "top-tracks"
-                }
-            },
-            {
-                "name": "albums",
-                "endpoint": {
-                    "path": "top-tracks",
-                    "data_selector": "tracks.album"
                 }
             }
         ],
