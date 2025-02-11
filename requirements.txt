@@ -9,6 +9,11 @@ dlt[duckdb]>=1.6.1
 pandas
 streamlit
 
+# dbt
+dbt-core
+dbt-duckdb
+dbt-dry-run
+
 # Utility
 pyyaml>=6.0
 typing_extensions

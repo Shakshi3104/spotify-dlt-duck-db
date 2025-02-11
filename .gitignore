@@ -10,3 +10,8 @@ secrets.toml
 *.wal
 .cache
 .idea
+
+# dbt
+target/
+dbt_packages/
+logs/
