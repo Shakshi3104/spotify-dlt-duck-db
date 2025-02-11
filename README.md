@@ -1,4 +1,4 @@
-# dltHub example: Spotify Web API to DuckDB
+# dlt→dbt example: Spotify Web API to DuckDB
 
 This repository is a small example for dltHub of extracting Spotify data to DuckDB.
 
@@ -6,6 +6,7 @@ The example gets the top tracks in Japan for なにわ男子 (Naniwa Danshi). Fo
 
 
 ## Quick Start
+### Spotify Web API to DuckDB
 1. Install the required packages.
     ```bash
     pip install -r requirements.txt
@@ -31,6 +32,38 @@ The example gets the top tracks in Japan for なにわ男子 (Naniwa Danshi). Fo
    ```
    You can get the following results:
    ![](./materials/duckdb_result_example.png)
+
+### Transform tables on DuckDB
+1. Fix `~/.dbt/profiles.yml` as below:
+   ```yaml
+   <dbt project name>:
+     outputs:
+       dev:
+         type: duckdb
+         path: <path to spotify_api_example.duckdb>
+         threads: 1
+   
+       prod:
+         type: duckdb
+         path: <path to spotify_api_example.duckdb>
+         threads: 4
+   
+     target: dev
+   ```
+2. Move to `dbt_duckdb/spotify_duckdb`
+   ```bash
+   cd dbt_duckdb/spotify_duckdb
+   ```
+3. Create mart table using dbt
+   ```bash
+   dbt run
+   ```
+4. Check the mart table
+   ```bash
+   python spotify_duckdb/check_mart.py
+   ```
+   You can get the following results:
+   ![](./materials/dbt_mart_example.png)
 
 ## Requirements
 - Python 3.11
