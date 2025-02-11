@@ -37,4 +37,6 @@ The example gets the top tracks in Japan for なにわ男子 (Naniwa Danshi). Fo
 - dlt
 - pandas
 - streamlit
+- dbt-core
+- dbt-duckdb
    
