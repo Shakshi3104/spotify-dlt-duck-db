@@ -10,10 +10,10 @@ The example gets the top tracks in Japan for なにわ男子 (Naniwa Danshi). Fo
     ```bash
     pip install -r requirements.txt
     ```
-2. Set the Spotify's client ID and client secret in `.env`, like a [`.env.example`](./.env.example)
+2. Set the Spotify's client ID and client secret in `.env`, like a [`.env.example`](spotify_duckdb/.env.example)
 3. Extract data from Spotify to DuckDB. When you run it, you will get a duckdb file.
    ```bash
-   python spotify_to_duckdb.py
+   python spotify_duckdb/spotify_to_duckdb.py
    ```
 4. Show pipeline
    ```bash
@@ -21,7 +21,7 @@ The example gets the top tracks in Japan for なにわ男子 (Naniwa Danshi). Fo
    ```
 5. Check DuckDB
    ```bash
-   python check_duck_db.py
+   python spotify_duckdb/check_duck_db.py
    ```
    or Check on a SQL editor, like a DBeaver
    ```sql

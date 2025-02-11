@@ -65,7 +65,9 @@ if __name__ == "__main__":
     pipeline = dlt.pipeline(
         pipeline_name="spotify_api_example",
         destination="duckdb",
-        dataset_name="naniwa_top_tracks"
+        dataset_name="naniwa_top_tracks",
+        # refresh dataset
+        refresh="drop_sources"
     )
 
     # Run the pipeline
