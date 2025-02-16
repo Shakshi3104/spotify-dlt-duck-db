@@ -13,20 +13,14 @@ from dlt.sources.rest_api import (
 )
 from dlt.sources.helpers import requests
 
+from spotify_credentials import get_spotify_access_token
+
 
 if __name__ == "__main__":
     load_dotenv()
 
-    # Get Spotify Web API access token
-    client_id = os.getenv("SPOTIFY_CLIENT_ID")
-    client_secret = os.getenv("SPOTIFY_CLIENT_SECRET")
-
-    credentials = SpotifyClientCredentials(
-            client_id=client_id,
-            client_secret=client_secret
-        )
-
-    access_token = credentials.get_access_token()
+    # Get Spotify access token
+    access_token: str = get_spotify_access_token()
 
     # Extract data from REST API
     # Get data of Naniwa Danshi
@@ -40,7 +34,7 @@ if __name__ == "__main__":
             "auth": (
                 {
                     "type": "bearer",
-                    "token": access_token["access_token"],
+                    "token": access_token,
                 }
                 if access_token
                 else None
