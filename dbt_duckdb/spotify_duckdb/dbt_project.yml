@@ -36,3 +36,5 @@ models:
       +materialized: table
     gold:
       +materialized: table
+    platinum:
+      +materialized: view
