@@ -2,9 +2,8 @@ version: 2
 
 sources:
   - name: bronze
-    schema: naniwa_top_tracks
+    schema: naniwa_danshi
     tables:
-      - name: top_tracks
-      - name: top_tracks__album__artists
-      - name: top_tracks__album__images
-      - name: top_tracks__artists
+      - name: albums
+      - name: track_details
+      - name: tracks
