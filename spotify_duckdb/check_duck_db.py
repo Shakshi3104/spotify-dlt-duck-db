@@ -8,7 +8,8 @@ if __name__ == "__main__":
     rel = spotify_data.sql(
         """
         select name, popularity, album__name, external_urls__spotify
-        from naniwa_top_tracks.top_tracks
+        from naniwa_danshi.track_details
         """
     )
     rel.show()
+
