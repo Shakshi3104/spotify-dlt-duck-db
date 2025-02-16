@@ -59,6 +59,20 @@ def top_tracks(artist_id: str, access_token: str) -> dlt.sources.DltSource:
 
 
 def tracks(artist_id: str, access_token: str) -> dlt.sources.DltSource:
+    """
+    dlt source of tracks from artist_id
+
+    Parameters
+    ----------
+    artist_id: str
+        Spotify ID of the artist
+    access_token: str
+        Spotify access token
+
+    Returns
+    -------
+    source: DltSource
+    """
     # Base URL
     base_url = f"https://api.spotify.com/v1/"
 
