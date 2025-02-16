@@ -8,8 +8,8 @@ if __name__ == "__main__":
     rel = spotify_data.sql(
         """
         select
-            song_title, album_title, popularity
-        from gold_top_tracks
+            *
+        from platinum_tracks
         """
     )
     rel.show()
