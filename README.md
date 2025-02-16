@@ -2,7 +2,7 @@
 
 This repository is a small example for dltHub of extracting Spotify data to DuckDB.
 
-The example gets the top tracks in Japan for なにわ男子 (Naniwa Danshi). For more information on Spotify's API, read the [reference](https://developer.spotify.com/documentation/web-api/reference/get-an-artists-top-tracks).
+The example gets the tracks for なにわ男子 (Naniwa Danshi). For more information on Spotify's API, read the [reference](https://developer.spotify.com/documentation/web-api/reference/get-track).
 
 
 ## Quick Start
@@ -28,7 +28,7 @@ The example gets the top tracks in Japan for なにわ男子 (Naniwa Danshi). Fo
    ```sql
    select
        name, popularity, album__name, external_urls__spotify
-   from naniwa_top_tracks.top_tracks
+   from naniwa_danshi.track_details
    ```
    You can get the following results:
    ![](./materials/duckdb_result_example.png)
