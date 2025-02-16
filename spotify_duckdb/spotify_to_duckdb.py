@@ -14,6 +14,7 @@ from dlt.sources.rest_api import (
 from dlt.sources.helpers import requests
 
 from spotify_credentials import get_spotify_access_token
+from spotify_api_sources import tracks
 
 
 if __name__ == "__main__":
@@ -25,41 +26,14 @@ if __name__ == "__main__":
     # Extract data from REST API
     # Get data of Naniwa Danshi
     artist_id = "5V0oa9WaeYkBszHV6ItVD6"
-    base_url = f"https://api.spotify.com/v1/artists/{artist_id}/"
-
-    # REST API configuration
-    config: RESTAPIConfig = {
-        "client": {
-            "base_url": base_url,
-            "auth": (
-                {
-                    "type": "bearer",
-                    "token": access_token,
-                }
-                if access_token
-                else None
-            )
-        },
-        "resources": [
-            {
-                "name": "top-tracks",
-                "endpoint": {
-                    "path": "top-tracks",
-                    "params": {
-                        "market": "JP"
-                    }
-                }
-            }
-        ],
-    }
+    # Get all tracks
+    source = tracks(artist_id, access_token)
 
     # Pipeline configuration
-    source = rest_api_source(config)
-
     pipeline = dlt.pipeline(
         pipeline_name="spotify_api_example",
         destination="duckdb",
-        dataset_name="naniwa_top_tracks",
+        dataset_name="naniwa_danshi",
         # refresh dataset
         refresh="drop_sources"
     )
